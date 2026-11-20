@@ -1,6 +1,6 @@
 id=zero30_ksu_banking_safe
 name=Zero 30 5G - Safe Banking & Root Hide
-version=v3.1-KSU
-versionCode=310
+version=v3.2-KSU
+versionCode=320
 author=Milner
-description=100% Bootloop-safe KernelSU module to hide debug/bootloader flags, USB debugging, and SUSFS paths.
+description=Status: 🛡️ Banking Mode (Safe) | 100% Bootloop-safe KSU module with 1-tap Action toggle for ADB/Banking mode.

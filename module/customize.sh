@@ -1,5 +1,5 @@
 ui_print "=========================================="
-ui_print "  Zero 30 5G Safe Banking Hide (v3.1-KSU) "
+ui_print "  Zero 30 5G Safe Banking Hide (v3.2-KSU) "
 ui_print "                by Milner                 "
 ui_print "=========================================="
 

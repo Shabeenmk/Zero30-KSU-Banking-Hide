@@ -1,4 +1,5 @@
 #!/system/bin/sh
+MODDIR=${0%/*}
 
 (
     COUNT=0
@@ -19,8 +20,6 @@
     [ -n "$(getprop ro.boot.vbmeta.device_state)" ] && resetprop ro.boot.vbmeta.device_state locked
     [ -n "$(getprop sys.oem_unlock_allowed)" ] && resetprop sys.oem_unlock_allowed 0
 
-    resetprop persist.sys.usb.config none
-    resetprop sys.usb.config none
     settings put global adb_enabled 0 2>/dev/null
     settings put global development_settings_enabled 0 2>/dev/null
     settings put global adb_wifi_enabled 0 2>/dev/null
@@ -29,4 +28,7 @@
         ksu_susfs add_sus_path /data/adb 2>/dev/null
         ksu_susfs add_sus_path /system/addon.d 2>/dev/null
     fi
+
+    # Update live status in KernelSU Manager card
+    sed -i "s/^description=.*/description=Status: 🛡️ Banking Mode (Safe) | 100% Bootloop-safe KSU module with 1-tap Action toggle for ADB\/Banking mode./" "$MODDIR/module.prop"
 ) &
