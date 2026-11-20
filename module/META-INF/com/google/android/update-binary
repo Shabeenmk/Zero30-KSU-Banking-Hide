@@ -1,0 +1,10 @@
+#!/sbin/sh
+umask 022
+ui_print() { echo "$1"; }
+require_new_magisk() { exit 1; }
+OUTFD=$2
+ZIPFILE=$3
+mount /data 2>/dev/null
+unzip -o "$ZIPFILE" -d $TMPDIR >&2
+chmod +x $TMPDIR/customize.sh
+. $TMPDIR/customize.sh
